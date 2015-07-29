@@ -51,12 +51,10 @@ RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y \
     libjpeg-dev \
     libqt5webkit5-dev
 
-ENV PHANTOM_JS_TAG 2.0.0
-
-RUN git clone https://github.com/ariya/phantomjs.git /tmp/phantomjs && \
-  cd /tmp/phantomjs && git checkout $PHANTOM_JS_TAG && \
-  ./build.sh --confirm && mv bin/phantomjs /usr/local/bin && \
-  rm -rf /tmp/phantomjs
+RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2 && \
+    tar xvjf phantomjs-1.9.7-linux-x86_64.tar.bz2 && \
+    mv phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
+    rm -f phantomjs-1.9.7-linux-x86_64.tar.bz2 && rm -rf phantomjs-1.9.7-linux-x86_64/bin/phantomjs
 
 WORKDIR /app
 ONBUILD ADD . /app
