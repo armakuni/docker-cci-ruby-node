@@ -1,4 +1,4 @@
-# Dockerfile - Ruby + Node
+# Dockerfile - Ruby + Node + PhantomJS
 
 This repository contains a Dockerfile of Ruby, nodejs and npm for Docker's automated build published to the public Docker Hub Registry.
 
@@ -6,23 +6,11 @@ This repository contains a Dockerfile of Ruby, nodejs and npm for Docker's autom
 - Ruby 2.2.2
 - Nodejs (latest)
 - npm
-- PhantomJS 2
+- PhantomJS 1.9.7
 
 ### Installation
 
 1. Install [Docker](https://www.docker.com/).
-2. Download [automated build](https://registry.hub.docker.com/u/armakuni/docker-cci-ruby-node/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull armakuni/docker-cci-ruby-node`
+2. Download [automated build](https://hub-beta.docker.com/r/armakuni/docker-cci-ruby-node-automated/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull armakuni/docker-cci-ruby-node-automated`
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="armakuni/docker-cci-ruby-node" github.com/armakuni/docker-cci-ruby-node`)
-
-### Usage
-
-    docker run -it --rm armakuni/docker-cci-ruby-node
-
-#### Run `ruby`
-
-    docker run -it --rm armakuni/docker-cci-ruby-node ruby
-
-#### Run `node`
-
-    docker run -it --rm armakuni/docker-cci-ruby-node node
