@@ -56,7 +56,14 @@ RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x
     mv phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
     rm -f phantomjs-1.9.7-linux-x86_64.tar.bz2 && rm -rf phantomjs-1.9.7-linux-x86_64/bin/phantomjs
 
+RUN apt-get update && apt-get install -y \
+    supervisor \
+    redis-server && \
+    mkdir -p /var/log/supervisor
+
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 WORKDIR /app
 ONBUILD ADD . /app
 
-CMD ["bash"]
+CMD ["/usr/bin/supervisord"]
