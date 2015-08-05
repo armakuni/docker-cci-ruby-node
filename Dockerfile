@@ -104,6 +104,7 @@ RUN apt-get update && apt-get install -y \
     redis-server && \
     mkdir -p /var/log/supervisor
 
+COPY redis.conf /redis.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /app
