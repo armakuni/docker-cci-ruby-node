@@ -110,4 +110,4 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 WORKDIR /app
 ONBUILD ADD . /app
 
-CMD ["/usr/bin/supervisord"]
+CMD /usr/bin/supervisord && bash
