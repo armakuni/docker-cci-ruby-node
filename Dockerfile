@@ -110,6 +110,11 @@ RUN apt-get update
 RUN mkdir -p /data/db
 RUN apt-get install -y adduser mongodb-org-server mongodb-org-shell
 
+RUN wget -O cf.tgz "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" && \
+    tar xvf cf.tgz && \
+    mv cf /usr/local/bin/ && \
+    rm cf.tgz
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /app
