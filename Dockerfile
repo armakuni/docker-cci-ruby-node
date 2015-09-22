@@ -115,6 +115,8 @@ RUN wget -O cf.tgz "https://cli.run.pivotal.io/stable?release=linux64-binary&sou
     mv cf /usr/local/bin/ && \
     rm cf.tgz
 
+RUN apt-get update && apt-get install -y parallel
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /app
