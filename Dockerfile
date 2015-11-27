@@ -83,6 +83,7 @@ RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y \
     bison \
     gperf \
     perl \
+    rsync \
     libsqlite3-dev \
     libfontconfig1-dev \
     libicu-dev \
