@@ -220,6 +220,7 @@ GEM
     mime (0.4.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
+    mini_portile2 (2.4.0)
     minitar (0.5.4)
     mongo (1.12.3)
       bson (= 1.12.3)
@@ -240,8 +241,8 @@ GEM
       net-ssh (>= 2.6.5)
     netaddr (1.5.0)
     netrc (0.10.3)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.10.8)
+      mini_portile2 (~> 2.4.0)
     oauth (0.4.7)
     papertrail (0.9.12)
       chronic
@@ -391,7 +392,7 @@ DEPENDENCIES
   net-http-persistent (= 2.9.4)
   net-ssh
   netrc (= 0.10.3)
-  nokogiri (= 1.6.6.2)
+  nokogiri (= 1.10.8)
   oauth (= 0.4.7)
   papertrail (= 0.9.12)
   parallel (= 0.7.1)
