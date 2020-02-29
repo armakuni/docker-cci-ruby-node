@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'bosh_cli', '1.3074.0'
 
-gem 'rake', '0.9.6'
+gem 'rake', '12.3.3'
 gem 'builder', '3.2.2'
 gem 'bson', '1.12.3'
 gem 'bundler08', '0.8.5'
